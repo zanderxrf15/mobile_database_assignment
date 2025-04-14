@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Task Manager',
+      title: 'Notes',
       home: TaskPage(isar),
     );
   }
@@ -107,7 +107,7 @@ class _TaskPageState extends State<TaskPage> {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Add Task'),
+        title: const Text('Add Note'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -142,7 +142,7 @@ class _TaskPageState extends State<TaskPage> {
     showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: const Text('Edit Task'),
+        title: const Text('Edit Note'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -183,7 +183,7 @@ class _TaskPageState extends State<TaskPage> {
             child: TextField(
               controller: searchController,
               decoration: const InputDecoration(
-                labelText: 'Search tasks...',
+                labelText: 'Search notes...',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(),
               ),
