@@ -1,16 +1,9 @@
-# mobile_database
+# Mobile Database Assignment
 
-A new Flutter project.
+The program made for this assignment is a simple note-taking application using Flutter and Isar as the database.
 
-## Getting Started
+The application starts by defining a model called Task which is annotated with @Collection for Isar that contains id, title, and description. The openIsar() function starts Isar by locating the device application documents directory. In the main() function, Isar is opened and passed to the MyApp widget to set up the MaterialApp and display the TaskPage as the home page. This structure makes sure the database is ready before rendering the UI.
 
-This project is a starting point for a Flutter application.
+The TaskPage is a StatefulWidget that manages notes data. The state class _TaskPageState defines the notes list, text controller for search and for loading, adding, editing, and deleting notes using the transactional methods in Isar. The loadTasks() method retrieves notes from the database and filters using search query. Adding or editing notes is handled with prompts for users to input note details and saves changes to the database. Afterwards, each database operation calls loadTasks() to refresh the notes list.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The UI includes a search bar, notes lists in styled cards using ListView.builder, and buttons for editing and deleting notes. The floating action button triggers a prompt for adding a new note. The application calls setState() for state management whenever the notes list or search inquiry changes. This keeps the UI responsive and ensures the notes displayed are synchronized to the database.
