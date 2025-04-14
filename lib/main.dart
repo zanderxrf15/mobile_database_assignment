@@ -183,7 +183,7 @@ class _TaskPageState extends State<TaskPage> {
             child: TextField(
               controller: searchController,
               decoration: const InputDecoration(
-                labelText: 'Search notes...',
+                labelText: 'Search notes',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(),
               ),
